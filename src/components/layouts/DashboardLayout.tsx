@@ -18,9 +18,15 @@ import {
   BookOpen,
   Calendar,
   Clock,
-  UserCheck
+  UserCheck,
+  Moon,
+  Sun,
+  Palette,
+  Book,
+  Video
 } from "lucide-react";
 import { toast } from "sonner";
+import { useTheme } from "@/components/ThemeProvider";
 
 interface SidebarItemProps {
   icon: ReactNode;
@@ -54,6 +60,7 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
   const [collapsed, setCollapsed] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const { theme, setTheme } = useTheme();
 
   // Get current path
   const currentPath = location.pathname;
@@ -64,6 +71,7 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
       case 'admin':
         return [
           { icon: <Home size={20} />, label: "Dashboard", href: "/admin/dashboard" },
+          { icon: <Book size={20} />, label: "Materi", href: "/admin/materi" },
           { icon: <School size={20} />, label: "Sekolah", href: "/admin/sekolah" },
           { icon: <Layers size={20} />, label: "Klub", href: "/admin/klub" },
           { icon: <Users size={20} />, label: "Member", href: "/admin/member" },
@@ -89,6 +97,7 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
       case 'member':
         return [
           { icon: <Home size={20} />, label: "Dashboard", href: "/member/dashboard" },
+          { icon: <Video size={20} />, label: "Materi", href: "/member/materi" },
           { icon: <BookOpen size={20} />, label: "Pelatihan", href: "/member/pelatihan" },
           { icon: <FileText size={20} />, label: "Ujian", href: "/member/ujian" },
           { icon: <Award size={20} />, label: "Sertifikat", href: "/member/sertifikat" },
@@ -99,6 +108,10 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
   };
 
   const navItems = getNavItems();
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   const handleLogout = () => {
     toast.success("Berhasil logout");
@@ -170,6 +183,18 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
           ))}
         </div>
 
+        {/* Theme Toggle */}
+        <div className="p-3">
+          <Button
+            variant="ghost"
+            className={`w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-colors justify-${collapsed ? 'center' : 'start'} text-sidebar-foreground/80 hover:text-sidebar-foreground hover:bg-sidebar-accent/50`}
+            onClick={toggleTheme}
+          >
+            {theme === "light" ? <Moon size={20} /> : <Sun size={20} />}
+            {!collapsed && <span>Tema {theme === "light" ? "Gelap" : "Terang"}</span>}
+          </Button>
+        </div>
+
         {/* Logout */}
         <div className="p-3">
           <Button
@@ -184,17 +209,25 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
       </aside>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col overflow-hidden bg-gray-50">
+      <main className="flex-1 flex flex-col overflow-hidden bg-gray-50 dark:bg-gray-900">
         {/* Top navigation bar */}
-        <header className="bg-white h-16 border-b flex items-center px-4 shadow-sm">
+        <header className="bg-white dark:bg-gray-800 h-16 border-b flex items-center px-4 shadow-sm">
           <div className="container mx-auto flex justify-between items-center">
-            <h1 className="text-xl font-semibold text-gray-800">
+            <h1 className="text-xl font-semibold text-gray-800 dark:text-gray-100">
               {role === 'admin' && 'Admin Dashboard'}
               {role === 'sekolah' && 'Dashboard Sekolah'}
               {role === 'klub' && 'Dashboard Klub'}
               {role === 'member' && 'Dashboard Member'}
             </h1>
             <div className="flex items-center gap-2">
+              <Button 
+                variant="ghost" 
+                size="sm"
+                onClick={toggleTheme}
+              >
+                {theme === "light" ? <Moon size={16} className="mr-1" /> : <Sun size={16} className="mr-1" />}
+                {theme === "light" ? "Gelap" : "Terang"}
+              </Button>
               <Button 
                 variant="ghost" 
                 size="sm"
@@ -215,7 +248,7 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
         </header>
 
         {/* Page content */}
-        <div className="flex-1 overflow-y-auto p-6">
+        <div className="flex-1 overflow-y-auto p-6 dark:bg-gray-900">
           <div className="container mx-auto">
             {children}
           </div>
