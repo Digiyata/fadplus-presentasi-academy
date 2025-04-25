@@ -80,7 +80,7 @@ const SekolahDashboard = () => {
             <CardContent className="p-6 flex justify-between items-center">
               <div>
                 <p className="text-sm font-medium text-gray-500">Status Pendaftaran</p>
-                <Badge className="mt-1" variant="success">Aktif</Badge>
+                <Badge className="mt-1" variant="default">Aktif</Badge>
               </div>
               <CheckCircle className="h-8 w-8 text-green-500" />
             </CardContent>

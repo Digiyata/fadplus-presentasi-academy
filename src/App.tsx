@@ -26,13 +26,24 @@ import AdminPengaturan from "./pages/admin/Pengaturan";
 
 // Sekolah Dashboard
 import SekolahDashboard from "./pages/sekolah/Dashboard";
+import SekolahKlub from "./pages/sekolah/Klub";
+import SekolahMember from "./pages/sekolah/Member";
+import SekolahUjian from "./pages/sekolah/Ujian";
+import SekolahSertifikat from "./pages/sekolah/Sertifikat";
 
 // Klub Dashboard
 import KlubDashboard from "./pages/klub/Dashboard";
+import KlubMember from "./pages/klub/Member";
+import KlubAbsensi from "./pages/klub/Absensi";
+import KlubUjian from "./pages/klub/Ujian";
+import KlubSertifikat from "./pages/klub/Sertifikat";
 
 // Member Dashboard
 import MemberDashboard from "./pages/member/Dashboard";
 import MemberMateri from "./pages/member/Materi";
+import MemberPelatihan from "./pages/member/Pelatihan";
+import MemberUjian from "./pages/member/Ujian";
+import MemberSertifikat from "./pages/member/Sertifikat";
 
 // Theme Provider
 import { ThemeProvider } from "@/components/ThemeProvider";
