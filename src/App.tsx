@@ -67,24 +67,24 @@ const App = () => (
 
             {/* Sekolah Routes */}
             <Route path="/sekolah/dashboard" element={<SekolahDashboard />} />
-            <Route path="/sekolah/klub" element={<SekolahDashboard />} />
-            <Route path="/sekolah/member" element={<SekolahDashboard />} />
-            <Route path="/sekolah/ujian" element={<SekolahDashboard />} />
-            <Route path="/sekolah/sertifikat" element={<SekolahDashboard />} />
+            <Route path="/sekolah/klub" element={<SekolahKlub />} />
+            <Route path="/sekolah/member" element={<SekolahMember />} />
+            <Route path="/sekolah/ujian" element={<SekolahUjian />} />
+            <Route path="/sekolah/sertifikat" element={<SekolahSertifikat />} />
 
             {/* Klub Routes */}
             <Route path="/klub/dashboard" element={<KlubDashboard />} />
-            <Route path="/klub/member" element={<KlubDashboard />} />
-            <Route path="/klub/absensi" element={<KlubDashboard />} />
-            <Route path="/klub/ujian" element={<KlubDashboard />} />
-            <Route path="/klub/sertifikat" element={<KlubDashboard />} />
+            <Route path="/klub/member" element={<KlubMember />} />
+            <Route path="/klub/absensi" element={<KlubAbsensi />} />
+            <Route path="/klub/ujian" element={<KlubUjian />} />
+            <Route path="/klub/sertifikat" element={<KlubSertifikat />} />
 
             {/* Member Routes */}
             <Route path="/member/dashboard" element={<MemberDashboard />} />
             <Route path="/member/materi" element={<MemberMateri />} />
-            <Route path="/member/pelatihan" element={<MemberDashboard />} />
-            <Route path="/member/ujian" element={<MemberDashboard />} />
-            <Route path="/member/sertifikat" element={<MemberDashboard />} />
+            <Route path="/member/pelatihan" element={<MemberPelatihan />} />
+            <Route path="/member/ujian" element={<MemberUjian />} />
+            <Route path="/member/sertifikat" element={<MemberSertifikat />} />
 
             {/* 404 Page */}
             <Route path="*" element={<NotFound />} />
