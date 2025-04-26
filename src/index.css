@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -90,13 +93,13 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-poppins;
   }
 }
 
 @layer components {
   .fadplus-header {
-    @apply font-bold text-3xl md:text-4xl lg:text-5xl text-brand-blue;
+    @apply font-bold text-3xl md:text-4xl lg:text-5xl text-brand-dark;
   }
   
   .fadplus-subheader {
@@ -108,10 +111,18 @@
   }
   
   .fadplus-button-primary {
-    @apply bg-brand-blue text-white font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300;
+    @apply bg-brand-orange text-white font-medium py-2 px-4 rounded-md hover:bg-amber-500 transition-colors duration-300;
   }
   
   .fadplus-button-secondary {
-    @apply bg-brand-red text-white font-medium py-2 px-4 rounded-md hover:bg-red-600 transition-colors duration-300;
+    @apply bg-gradient-to-r from-brand-purple-light to-brand-pink text-white font-medium py-2 px-4 rounded-md hover:opacity-90 transition-opacity duration-300;
+  }
+
+  .purple-gradient {
+    @apply bg-gradient-to-r from-brand-purple-light to-brand-pink;
+  }
+  
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-1;
   }
 }

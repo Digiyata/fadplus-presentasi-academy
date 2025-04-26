@@ -8,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-bold mb-4">FadPlus</h3>
+            <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-brand-purple-light to-brand-pink bg-clip-text text-transparent">FadPlus</h3>
             <p className="mb-4 text-gray-300">
               Platform pelatihan public speaking dan presentasi untuk siswa sekolah 
               yang didedikasikan untuk membangun kepercayaan diri dan keterampilan 
@@ -21,27 +21,27 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4">Menu</h3>
             <ul className="space-y-2 text-gray-300">
               <li>
-                <Link to="/" className="hover:text-brand-blue transition-colors">
+                <Link to="/" className="hover:text-brand-purple-light transition-colors">
                   Beranda
                 </Link>
               </li>
               <li>
-                <Link to="/tentang" className="hover:text-brand-blue transition-colors">
+                <Link to="/tentang" className="hover:text-brand-purple-light transition-colors">
                   Tentang
                 </Link>
               </li>
               <li>
-                <Link to="/program" className="hover:text-brand-blue transition-colors">
+                <Link to="/program" className="hover:text-brand-purple-light transition-colors">
                   Program
                 </Link>
               </li>
               <li>
-                <Link to="/mitrasekolah" className="hover:text-brand-blue transition-colors">
+                <Link to="/mitrasekolah" className="hover:text-brand-purple-light transition-colors">
                   Mitra Sekolah
                 </Link>
               </li>
               <li>
-                <Link to="/persyaratan" className="hover:text-brand-blue transition-colors">
+                <Link to="/persyaratan" className="hover:text-brand-purple-light transition-colors">
                   Persyaratan
                 </Link>
               </li>
@@ -64,16 +64,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold mb-4">Media Sosial</h3>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">
+              <a href="#" className="text-gray-300 hover:text-brand-purple-light transition-colors">
                 Instagram
               </a>
-              <a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">
+              <a href="#" className="text-gray-300 hover:text-brand-purple-light transition-colors">
                 Facebook
               </a>
-              <a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">
+              <a href="#" className="text-gray-300 hover:text-brand-purple-light transition-colors">
                 YouTube
               </a>
-              <a href="#" className="text-gray-300 hover:text-brand-blue transition-colors">
+              <a href="#" className="text-gray-300 hover:text-brand-purple-light transition-colors">
                 LinkedIn
               </a>
             </div>
@@ -85,10 +85,10 @@ const Footer = () => {
             &copy; {new Date().getFullYear()} FadPlus. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <Link to="/terms" className="text-gray-400 text-sm hover:text-brand-blue transition-colors">
+            <Link to="/terms" className="text-gray-400 text-sm hover:text-brand-purple-light transition-colors">
               Syarat & Ketentuan
             </Link>
-            <Link to="/privacy" className="text-gray-400 text-sm hover:text-brand-blue transition-colors">
+            <Link to="/privacy" className="text-gray-400 text-sm hover:text-brand-purple-light transition-colors">
               Kebijakan Privasi
             </Link>
           </div>

@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -18,6 +19,10 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        sans: ['Poppins', 'sans-serif'],
+        poppins: ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -58,6 +63,13 @@ export default {
           gray: '#6B7280', // Gray
           white: '#FFFFFF', // White
           dark: '#1F2937', // Dark text
+          purple: {
+            light: '#A18CD1',
+            medium: '#8A6ED5',
+            dark: '#6A4CB8',
+          },
+          pink: '#FBC2EB',
+          orange: '#FFB400',
         },
         sidebar: {
           DEFAULT: 'hsl(var(--sidebar-background))',
@@ -103,6 +115,14 @@ export default {
         'fade-out': {
           '0%': { opacity: '1' },
           '100%': { opacity: '0' }
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-10px)' }
+        },
+        'pulse-slow': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' }
         }
       },
       animation: {
@@ -110,7 +130,9 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'slide': 'slide 30s infinite linear',
         'fade-in': 'fade-in 0.5s ease-in',
-        'fade-out': 'fade-out 0.5s ease-out'
+        'fade-out': 'fade-out 0.5s ease-out',
+        'float': 'float 6s ease-in-out infinite',
+        'pulse-slow': 'pulse-slow 3s ease-in-out infinite'
       }
     }
   },
